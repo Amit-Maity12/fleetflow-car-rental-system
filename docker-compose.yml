@@ -1,0 +1,5 @@
+
+# FleetFlow Docker Compose placeholder
+# PostgreSQL configuration will be added in Phase 2.
+
+services: {}
