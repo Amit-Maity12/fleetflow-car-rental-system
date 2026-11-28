@@ -1,5 +1,22 @@
 
-# FleetFlow Docker Compose placeholder
-# PostgreSQL configuration will be added in Phase 2.
+services:
+  db:
+    image: postgres:16
+    container_name: fleetflow-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5434:5432"
+    volumes:
+      - fleetflow-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
-services: {}
+volumes:
+  fleetflow-db-data:

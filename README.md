@@ -2,7 +2,7 @@
 
 Multi-tenant car rental and fleet management platform built with Spring Boot, PostgreSQL and React.
 
-**Status:** In development – Phase 1
+**Status:** Phase 2 complete
 
 ## Tech Stack
 
