@@ -36,3 +36,5 @@ Desktop.ini
 docker-data/
 postgres-data/
 **/pgdata/
+*.log
+backend/startup-log.txtgit add .gitignore
